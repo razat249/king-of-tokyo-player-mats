@@ -1,3 +1,11 @@
+export type Json =
+  | string
+  | number
+  | boolean
+  | null
+  | { [key: string]: Json | undefined }
+  | Json[]
+
 export interface Database {
   public: {
     Tables: {
@@ -20,6 +28,7 @@ export interface Database {
           created_at?: string
           is_active?: boolean
         }
+        Relationships: []
       }
       players: {
         Row: {
@@ -73,12 +82,33 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: [
+          {
+            foreignKeyName: "players_room_code_fkey"
+            columns: ["room_code"]
+            referencedRelation: "rooms"
+            referencedColumns: ["room_code"]
+          }
+        ]
       }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      [_ in never]: never
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
     }
   }
 }
 
 export type Room = Database['public']['Tables']['rooms']['Row']
+export type RoomInsert = Database['public']['Tables']['rooms']['Insert']
 export type Player = Database['public']['Tables']['players']['Row']
 export type PlayerInsert = Database['public']['Tables']['players']['Insert']
 export type PlayerUpdate = Database['public']['Tables']['players']['Update']
