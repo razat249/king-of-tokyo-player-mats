@@ -1,0 +1,140 @@
+.other-players {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.other-players.empty {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.empty-message {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.empty-hint {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-icon {
+  font-size: 1.1rem;
+}
+
+.section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.players-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.player-mini-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.player-mini-card:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: var(--monster-color);
+  transform: translateX(4px);
+}
+
+.player-mini-card.defeated {
+  opacity: 0.5;
+}
+
+.player-mini-card.in-tokyo {
+  background: rgba(255, 107, 53, 0.15);
+  border-color: rgba(255, 107, 53, 0.3);
+}
+
+.mini-monster {
+  font-size: 2rem;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.tokyo-indicator {
+  position: absolute;
+  bottom: -4px;
+  right: -8px;
+  font-size: 0.9rem;
+}
+
+.mini-stats {
+  flex: 1;
+  min-width: 0;
+}
+
+.mini-name {
+  display: block;
+  font-family: 'Bangers', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  color: var(--monster-color);
+  margin-bottom: 0.25rem;
+}
+
+.mini-values {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.mini-health {
+  color: #ff6b6b;
+}
+
+.mini-vp {
+  color: #ffd23f;
+}
+
+.mini-energy {
+  color: #3ec300;
+}
+
+.defeated-badge,
+.winner-badge {
+  position: absolute;
+  right: 0.75rem;
+  font-size: 1.5rem;
+}
+
+/* Scrollable on many players */
+@media (max-height: 700px) {
+  .players-list {
+    max-height: 150px;
+    overflow-y: auto;
+  }
+}

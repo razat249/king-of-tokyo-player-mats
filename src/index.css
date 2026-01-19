@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #1a1a2e;
+  --bg-card: #16213e;
+  --accent-orange: #ff6b35;
+  --accent-yellow: #ffd23f;
+  --accent-green: #3ec300;
+  --text-light: #eaeaea;
+  --text-muted: #8892a0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-dark);
+  background-image: 
+    radial-gradient(ellipse at top, #2a2a4e 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, #1a1a2e 0%, #0f0f1a 100%);
+  min-height: 100vh;
+  color: var(--text-light);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  max-width: 340px;
+  width: 100%;
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.monster-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+h1 {
+  font-family: 'Bangers', cursive;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.divider {
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-green));
+  margin: 1.5rem auto;
+  border-radius: 2px;
+}
+
+.message {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-green);
+  margin-bottom: 0.5rem;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
