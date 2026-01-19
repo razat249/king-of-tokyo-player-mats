@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/king-of-tokyo-player-mats/sw.js', { scope: '/king-of-tokyo-player-mats/' })})}
